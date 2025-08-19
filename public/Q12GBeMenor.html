@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Q1 2nd Graded Exercise submitted by Leigh Menor of Beryllium</h2>
+<label> 
+       <label for = "mp"> Meal Price:</label> 
+       <input type = "text" id = "mp" mp = "mp"> <br>
+       <label for = "tip"> Tip:</label> 
+       <input type = "text" id = "tip" tip = "tp"> <br>
+       <label for = "sc"> Service Charge:</label> 
+       <input type = "text" id = "sc" sc = "sc"> <br>
+        <button onclick = "totalMeal()"> Accept Input </button>
+		<p id= "result"> Total Meal: </p>
+    </label>
+  
+
+    <script>
+        function totalMeal() {
+
+		let mp = parseFloat(document.getElementById("mp").value) || 0;
+		let tip = parseFloat(document.getElementById("tip").value) || 0;
+		let scPercent = parseFloat(document.getElementById("sc").value) || 0
+
+          let serviceCharge = (scPercent / 100) * mp;
+		  let totalCost = mp + tip + serviceCharge;
+		  
+		   document.getElementById("result").innerText = "Total Meal: " + totalCost.toFixed(2);
+        }
+    </script>
+</body>
+</html>
