@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Q1 3rd Graded Exercise submitted by Leigh Menor of 9 Beryllium</h2>
+    <p> Guess the number: ****</p>
+    
+    <p> The number is from 1 to 100 </p>
+    <label for="guess">Enter your guess:</label> 
+    <input type="text" id="guess"><br>
+    <button onclick="checkGuess()">Check it</button>
+    
+    <p id="result">Result: </p>
+    
+    <script>
+      // generate random number
+      let secretNumber = Math.floor(Math.random() * 100) + 1;
+
+      function checkGuess() {
+        let userGuess = document.getElementById("guess").value;
+        userGuess = Number(userGuess);
+
+        let result = "";
+
+        if (userGuess === secretNumber) {
+          result = "You are correct! The number was " + secretNumber;
+        } else if (userGuess < secretNumber) {
+          result = "Higher";
+        } else {
+          result = "Lower";
+        }
+
+        document.getElementById("result").textContent = "Result: " + result;
+      }
+    </script> 
+  </body>
+</html>
